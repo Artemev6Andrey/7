@@ -3,10 +3,8 @@
 
 
 def func_show(func):
-    def wrapper(width, height):
-        res = func(width, height)
-        print(f"Площадь прямоугольника: {res}")
-        return res
+    def wrapper(*args, **kwargs):
+        return f"Площадь прямоугольника: {func(*args, **kwargs)}"
     return wrapper
 
 
@@ -16,4 +14,4 @@ def get_sq(width, height):
 
 
 if __name__ == '__main__':
-    get_sq(width=5, height=7)
+    print(get_sq(width=5, height=7))
